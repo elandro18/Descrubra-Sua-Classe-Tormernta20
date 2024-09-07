@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body {
+    font-family: "Chakra Petch", sans-serif;
+    background-color: #DDD;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    /*justify-content: space-evenly;*/
+    /*align-items: center;*/
+  }
+
+  nav {
+
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: #7e7e7e;
+    align-items: center;
+    margin-top:3%;   
+    padding-left: 1%;
+    
+  }
+
+  nav a {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: background-color 0.3s;
+  }
+
+  nav a:hover {
+    background-color: #555;
+    border-radius: 5px;
+    color: white;
+  }
+
+  h1 {
+    font-size: 1.7rem; /* Tamanho da fonte */
+    color: #222831; /* Cor do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    letter-spacing: 0.4rem; /* Espaçamento entre letras */
+    }
+
+  /*Estilos gerais*/
+  .container {
+    display: flex; /* Usa Flexbox para layout */
+    flex-direction: column; /* Alinha os itens na vertical */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    margin-bottom: 3rem; /* Espaçamento abaixo de cada seção */
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .section1 {
+    display: none;
+    margin-top: 0%;
+  }
+
+  .section1.active {
+    margin-top: 0%;
+    display: block;
+  }
+
+  .texto-inicio{
+    background: #FFFFFF;
+    border-radius: 0.6rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 3%
+  }
+ 
+  .questionario {
+    background-color: #FFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    height: 100px;
+    /* max-width: 600px;*/
+    text-align: center;
+    /*display: none;*/
+    opacity: 0;
+    transform: translateY(20px);  /* Deslocado para baixo */
+    transition: opacity 0.5s ease, transform 0.5s ease;  /* Transição suave */
+  }
+  .questionario.visible{
+    opacity: 1;
+    transform: translateY(0);
+  }
+ 
+  
+  .pergunta {
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);  /* Deslocado para baixo */
+    transition: opacity 0.5s ease, transform 0.5s ease;  /* Transição suave */
+  }
+  
+  .pergunta.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 25px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  .resultado {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #4CAF50;
+    opacity: 0;
+    transition: opacity 0.8s;
+  }
+  
+  .resultado.visible {
+    opacity: 1;
+  }
+
+  #progressBarContainer {
+    width: 100%;
+    background-color: #ddd;
+    height: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  #progressBar {
+    width: 0%;
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    transition: width 0.5s;
+  }
+
+  footer {
+    background-color: #F5F7F8; /* Cor de fundo do rodapé */
+    color: #45474B; /* Cor do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 0; /* Espaçamento interno */
+    width: 100%; /* Largura total da página */
+    position: absolute; /* Posiciona o rodapé */
+    bottom: 0; /* Alinha ao fundo da página */
+    font-size: 1rem; /* Tamanho da fonte */
+}
+
+ 
+ 
+ 
+  /*Esconde o menu padrão em telas pequenas
+@media (max-width: 768px) {
+    .menu {
+      display: none;
+    }
+    .menu-toggle {
+      display: block;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+    .menu-toggle .hamburger,
+    .menu-toggle .hamburger::before,
+    .menu-toggle .hamburger::after {
+      width: 30px;
+      height: 3px;
+      background-color: white;
+      display: block;
+      position: relative;
+      transition: all 0.3s;
+    }
+    .menu-toggle .hamburger::before,
+    .menu-toggle .hamburger::after {
+      content: '';
+      position: absolute;
+    }
+    .menu-toggle .hamburger::before {
+      top: -8px;
+    }
+    .menu-toggle .hamburger::after {
+      top: 8px;
+    }
+  }
+  
+  //    Mostra o menu quando ativo
+  .menu.active {
+    display: block;
+    position: absolute;
+    background-color: #333;
+    width: 100%;
+    left: 0;
+    top: 50px;
+  }
+  
+  .menu.active li {
+    display: block;
+    margin: 10px 0;
+  }*/
