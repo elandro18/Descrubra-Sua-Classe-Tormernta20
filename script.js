@@ -7,6 +7,7 @@
     const startBtn = document.getElementById('startBtn');
     const resetBtn = document.getElementById('resetBtn');
     const questionarioDiv = document.getElementById('questionario');
+    const resultadoDiv =  document.getElementById('resultado');
 
     const inicioSection = document.getElementById('inicio');
     const historiaSection = document.getElementById('historia');
@@ -70,6 +71,7 @@
         }, 100); // 100ms para garantir que o elemento foi inserido no DOM
         startBtn.style.display = 'none';        // Oculta o botão "Iniciar"
         resetBtn.style.display = 'block';       // Exibe o botão "Resetar"
+         
     }  
     // Função para resetar o questionário
     function resetarQuestionario() {
@@ -78,12 +80,14 @@
             questionarioDiv.style.display = 'none';     // Oculta as perguntas completamente
             startBtn.style.display = 'block';         // Exibe o botão "Iniciar"
             resetBtn.style.display = 'none';          // Oculta o botão "Resetar"
+            resultadoDiv.style.display = 'none';
         }, 500);            
         // Aqui você pode limpar qualquer resposta ou progresso do questionário
         pontuacaoClasses = {guerreiro: 0, barbaro:0, mago: 0, ladino: 0, feiticeiro:0, druida:0, bardo: 0, clerigo:0, paladino:0 };
         perguntaAtual = 0;
-        mostrarPergunta(perguntaAtual);
-        atualizarProgresso();       
+        atualizarProgresso()
+        mostrarPergunta(perguntaAtual);         
+        
         console.log(pontuacaoClasses, perguntaAtual);
     }
    
@@ -209,10 +213,10 @@
         for (let classe in pontuacaoClasses) {
             pontuacaoClasses[classe] += respostas['pergunta' + (perguntaIndex + 1)][resposta][classe];
         }
-        console.log(pontuacaoClasses);
-        atualizarProgresso();
+        console.log(pontuacaoClasses);        
         perguntaAtual++;
         if (perguntaAtual < perguntas.length) {
+            atualizarProgresso();
             console.log(perguntaAtual);
             mostrarPergunta(perguntaAtual);
         } else {
@@ -221,23 +225,25 @@
     }   
 
     function atualizarProgresso() {
-        const progresso = ((perguntaAtual + 1) / perguntas.length) * 100;
-        document.getElementById('progressBar').style.width = progresso + '%';
-    } 
-
-   
+       
+        if(perguntaAtual == 0){
+            console.log("acessou");
+            document.getElementById('progressBar').style.width = 0 + '%';
+        }else{
+            const progresso = ((perguntaAtual + 1) / perguntas.length) * 100;
+            document.getElementById('progressBar').style.width = progresso + '%';
+        }
+         
+    }    
     function recomendarClasse() {
         const classeRecomendada = 
         //Object.keys(pontuacaoClasses).reduce((a, b) => pontuacaoClasses[a] > pontuacaoClasses[b] ? a : b);
-        console.log(pontuacaoClasses);
-        
-    
+        console.log(pontuacaoClasses);           
         document.getElementById('classeRecomendada').textContent = classeRecomendada;
-        document.getElementById('resultado').style.display = 'block';
-        questionarioDiv.style.display = 'none';
-    
+        resultadoDiv.style.display = 'block';           
         // Animação de transição para o resultado
         setTimeout(() => {
-        document.getElementById('resultado').classList.add('visible');
+            resultadoDiv.classList.add('visible');
+            questionarioDiv.style.display = 'none';
         }, 100); // Pequeno delay para suavizar a transição
     }
