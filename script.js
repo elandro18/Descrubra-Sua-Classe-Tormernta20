@@ -234,10 +234,14 @@
          
     }    
     function recomendarClasse() {
-        const classeRecomendada = 
-        //Object.keys(pontuacaoClasses).reduce((a, b) => pontuacaoClasses[a] > pontuacaoClasses[b] ? a : b);
-        console.log(pontuacaoClasses);           
-        document.getElementById('classeRecomendada').textContent = classeRecomendada;
+        console.log(pontuacaoClasses);         
+        const classesArray = Object.entries(pontuacaoClasses);
+        classesArray.sort((a, b) => b[1] - a[1]);
+        
+        const top3Classes = classesArray.slice(0, 3);       
+        console.log(top3Classes);
+
+        document.getElementById('classeRecomendada').textContent = top3Classes;
         resultadoDiv.style.display = 'block';           
         // Animação de transição para o resultado
         setTimeout(() => {
