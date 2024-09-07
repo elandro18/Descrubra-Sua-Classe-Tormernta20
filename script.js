@@ -55,7 +55,6 @@
         barbaro:{fisico: 8, estrategia: 0, magia:0, vida: 8, agilidade: 2, resistencia: 7, carisma: 0},
         mago: { fisico: 1, estrategia: 7, magia: 8, vida: 4, agilidade: 3, resistencia: 3, carisma: 4 },
         ladino: { fisico: 6, estrategia: 5, magia: 2, vida: 6, agilidade: 8, resistencia: 3,carisma: 7 },
-        feiticeiro: { fisico: 1, estrategia: 5, magia: 7, vida: 4, agilidade: 4, resistencia: 4, carisma: 6 },
         druida: {fisico: 4,  estrategia: 4, magia: 6, vida: 5, agilidade: 3, resistencia: 4, carisma: 4 },
         bardo: { fisico: 3, estrategia: 5, magia: 4, vida: 4, agilidade: 4, resistencia: 2, carisma: 7 },
         clerigo: { fisico: 4,  estrategia: 4, magia: 7, vida: 7, agilidade: 2, resistencia: 6, carisma: 4 },
@@ -83,7 +82,7 @@
             resultadoDiv.style.display = 'none';
         }, 500);            
         // Aqui você pode limpar qualquer resposta ou progresso do questionário
-        pontuacaoClasses = {guerreiro: 0, barbaro:0, mago: 0, ladino: 0, feiticeiro:0, druida:0, bardo: 0, clerigo:0, paladino:0 };
+        pontuacaoClasses = {guerreiro: 0, barbaro:0, mago: 0, ladino: 0, druida:0, bardo: 0, clerigo:0, paladino:0 };
         perguntaAtual = 0;
         atualizarProgresso()
         mostrarPergunta(perguntaAtual);         
@@ -91,7 +90,7 @@
         console.log(pontuacaoClasses, perguntaAtual);
     }  
 
-    let pontuacaoClasses = {guerreiro: 0, barbaro:0, mago: 0, ladino: 0, feiticeiro:0, druida:0, bardo: 0, clerigo:0, paladino:0 };
+    let pontuacaoClasses = {guerreiro: 0, barbaro:0, mago: 0, ladino: 0, druida:0, bardo: 0, clerigo:0, paladino:0 };
     console.log(pontuacaoClasses);
     
     const perguntas = [
@@ -102,7 +101,7 @@
             opcoes: ["Gosto de ser a face do grupo", "Sinto-me mais confortável em funções de suporte ou controle"] },
         
         {texto: "3 - Diante de uma situação difícil? ?",
-            opcoes:["Gosto de ser político","Quero quebrar o pau barraca"]
+            opcoes:["Gosto de ser político","Quero quebrar o pau da barraca"]
         },
         {texto: "4 - Você valoriza mais a proteção dos outros ou focar em causar o maior dano possível?",
             opcoes:["Fogo no parquinho!","Proteção acima de tudo"]
@@ -131,44 +130,44 @@
      //a pontuação será de 0 a 8 para cada pergunta
     const respostas = {
         pergunta1: { 
-            resposta1: { guerreiro: 8, barbaro: 8, mago: 1, ladino: 3, feiticeiro:1, druida:4, bardo: 3, clerigo:4, paladino:8 }, 
-            resposta2: { guerreiro: 0, barbaro:0, mago: 8, ladino: 3, feiticeiro: 7, druida:4, bardo: 6, clerigo:4, paladino:1 }
+            resposta1: { guerreiro: 8, barbaro: 8, mago: 1, ladino: 5,  druida:4, bardo: 3, clerigo:5, paladino:7 }, 
+            resposta2: { guerreiro: 0, barbaro:0, mago: 7, ladino: 3, druida:6, bardo: 5, clerigo:4, paladino:1 }
         },
         pergunta2: { 
-            resposta1: { guerreiro: 3, barbaro:0, mago: 4, ladino: 7, feiticeiro:6, druida:4, bardo: 8, clerigo:4, paladino:4 }, 
-            resposta2: { guerreiro: 6, barbaro:5, mago: 4, ladino: 4, feiticeiro:3, druida:4, bardo: 0, clerigo:4, paladino:2 },            
+            resposta1: { guerreiro: 3, barbaro:0, mago: 2, ladino: 7, druida:5, bardo: 8, clerigo:4, paladino:3 }, 
+            resposta2: { guerreiro: 6, barbaro:5, mago: 3, ladino: 4, druida:4, bardo: 0, clerigo:6, paladino:2 },            
         },
         pergunta3: { 
-            resposta1: { guerreiro: 3, barbaro:0, mago: 4, ladino: 7, feiticeiro:6, druida:4, bardo: 8, clerigo:4, paladino:4 }, 
-            resposta2: { guerreiro: 6, barbaro:8, mago: 4, ladino: 4, feiticeiro:3, druida:4, bardo: 0, clerigo:4, paladino:4 },             
+            resposta1: { guerreiro: 3, barbaro:0, mago: 3, ladino: 6, druida:5, bardo: 8, clerigo:6, paladino:3 }, 
+            resposta2: { guerreiro: 6, barbaro:8, mago: 4, ladino: 4, druida:4, bardo: 0, clerigo:4, paladino:2 },           
         },
         pergunta4: { 
-            resposta1: { guerreiro: 3, barbaro:3, mago: 8, ladino: 4, feiticeiro:8, druida:2, bardo: 0, clerigo:0, paladino:0 }, 
-            resposta2: { guerreiro: 3, barbaro:0, mago: 2, ladino: 1, feiticeiro:1, druida:5, bardo: 0, clerigo:8, paladino:8 }, 
+            resposta1: { guerreiro: 3, barbaro:3, mago: 8, ladino: 5,  druida:2, bardo: 0, clerigo:0, paladino:0 }, 
+            resposta2: { guerreiro: 4, barbaro:0, mago: 2, ladino: 1,  druida:6, bardo: 4, clerigo:8, paladino:6 }, 
         },
         pergunta5: { 
-            resposta1: { guerreiro: 3, barbaro:0, mago: 7, ladino: 7, feiticeiro:7, druida:7, bardo: 4, clerigo:5, paladino:3 }, 
-            resposta2: { guerreiro: 6, barbaro:5, mago: 0, ladino: 0, feiticeiro:0, druida:3, bardo: 4, clerigo:2, paladino:6 }, 
+            resposta1: { guerreiro: 3, barbaro:0, mago: 7, ladino: 8,  druida:8, bardo: 6, clerigo:5, paladino:3 }, 
+            resposta2: { guerreiro: 6, barbaro:5, mago: 0, ladino: 0, druida:5, bardo: 4, clerigo:2, paladino:6 }, 
         },
         pergunta6: { 
-            resposta1: { guerreiro: 3, barbaro:3, mago: 4, ladino: 0, feiticeiro:3, druida:6, bardo: 0, clerigo:6, paladino:6 }, 
-            resposta2: { guerreiro: 3, barbaro:0, mago: 0, ladino: 4, feiticeiro:5, druida:3, bardo: 0, clerigo:2, paladino:2 }, 
+            resposta1: { guerreiro: 4, barbaro:3, mago: 4, ladino: 0,  druida:6, bardo: 0, clerigo:6, paladino:6 }, 
+            resposta2: { guerreiro: 3, barbaro:0, mago: 0, ladino: 4,  druida:3, bardo: 8, clerigo:2, paladino:2 }, 
         },
         pergunta7: { 
-            resposta1: { guerreiro: 2, barbaro:3, mago: 0, ladino: 0, feiticeiro:0, druida:8, bardo: 0, clerigo:2, paladino:3 }, 
-            resposta2: { guerreiro: 4, barbaro:0, mago: 5, ladino: 3, feiticeiro:0, druida:3, bardo: 0, clerigo:2, paladino:3 }, 
+            resposta1: { guerreiro: 2, barbaro:3, mago: 0, ladino: 0,  druida:8, bardo: 2, clerigo:2, paladino:3 }, 
+            resposta2: { guerreiro: 4, barbaro:0, mago: 5, ladino: 3, druida:3, bardo: 0, clerigo:4, paladino:4 }, 
             },
         pergunta8: { 
-            resposta1: { guerreiro: 8, barbaro:8, mago: 0, ladino: 0, feiticeiro:0, druida:5, bardo: 5, clerigo:7, paladino:8 }, 
-            resposta2: { guerreiro: 0, barbaro:0, mago: 8, ladino: 3, feiticeiro:8, druida:4, bardo: 3, clerigo:4, paladino:3 }, 
+            resposta1: { guerreiro: 8, barbaro:8, mago: 0, ladino: 7, druida:5, bardo: 5, clerigo:8, paladino:7 }, 
+            resposta2: { guerreiro: 0, barbaro:0, mago: 8, ladino: 0,  druida:4, bardo: 3, clerigo:4, paladino:3 }, 
             },
         pergunta9: { 
-            resposta1: { guerreiro: 6, barbaro:7, mago: 0, ladino: 0, feiticeiro:0, druida:1, bardo: 1, clerigo:3, paladino:8 }, 
-            resposta2: { guerreiro: 2, barbaro:0, mago: 7, ladino: 8, feiticeiro:4, druida:3, bardo: 6, clerigo:0, paladino:0 }, 
+            resposta1: { guerreiro: 6, barbaro:7, mago: 0, ladino: 0, druida:1, bardo: 1, clerigo:3, paladino:8 }, 
+            resposta2: { guerreiro: 2, barbaro:0, mago: 7, ladino: 8,  druida:3, bardo: 6, clerigo:0, paladino:0 }, 
             },
         pergunta10: { 
-            resposta1: { guerreiro: 3, barbaro:0, mago: 7, ladino: 4, feiticeiro:7, druida:5, bardo: 3, clerigo:0, paladino:0 }, 
-            resposta2: { guerreiro: 8, barbaro:8, mago: 0, ladino: 4, feiticeiro:0, druida:4, bardo: 6, clerigo:7, paladino:8 }, 
+            resposta1: { guerreiro: 3, barbaro:0, mago: 5, ladino: 5,  druida:6, bardo: 6, clerigo:4, paladino:0 }, 
+            resposta2: { guerreiro: 6, barbaro:8, mago: 0, ladino: 5,  druida:5, bardo: 3, clerigo:7, paladino:8 }, 
             }
         
     };
