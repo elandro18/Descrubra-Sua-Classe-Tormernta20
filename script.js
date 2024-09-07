@@ -89,12 +89,10 @@
         mostrarPergunta(perguntaAtual);         
         
         console.log(pontuacaoClasses, perguntaAtual);
-    }
-   
-    
+    }  
+
     let pontuacaoClasses = {guerreiro: 0, barbaro:0, mago: 0, ladino: 0, feiticeiro:0, druida:0, bardo: 0, clerigo:0, paladino:0 };
     console.log(pontuacaoClasses);
-
     
     const perguntas = [
         { texto: "1 - Como você se sente em relação ao uso de magia arcana?", 
