@@ -60,7 +60,7 @@
         clerigo: { fisico: 4,  estrategia: 4, magia: 7, vida: 7, agilidade: 2, resistencia: 6, carisma: 4 },
         paladino: { fisico: 8,  estrategia: 4,  magia: 3, vida: 8, agilidade: 5, resistencia: 8, carisma: 4 }
     };      
-
+    var perguntaAtual = 0;
     // Função para iniciar o questionário
     function iniciarQuestionario() {
         questionarioDiv.style.display = 'block';  // Exibe as perguntas
@@ -81,12 +81,17 @@
         }, 500);            
         // Aqui você pode limpar qualquer resposta ou progresso do questionário
         pontuacaoClasses = {guerreiro: 0, barbaro:0, mago: 0, ladino: 0, feiticeiro:0, druida:0, bardo: 0, clerigo:0, paladino:0 };
+        perguntaAtual = 0;
+        mostrarPergunta(perguntaAtual);
+        atualizarProgresso();       
+        console.log(pontuacaoClasses, perguntaAtual);
     }
-
+   
+    
     let pontuacaoClasses = {guerreiro: 0, barbaro:0, mago: 0, ladino: 0, feiticeiro:0, druida:0, bardo: 0, clerigo:0, paladino:0 };
     console.log(pontuacaoClasses);
 
-    let perguntaAtual = 0;
+    
     const perguntas = [
         { texto: "1 - Como você se sente em relação ao uso de magia arcana?", 
             opcoes: ["Prefiro confiar em habilidades físicas e treinamento", "A magia me intriga!"] 
@@ -129,7 +134,7 @@
         },
         pergunta2: { 
             resposta1: { guerreiro: 3, barbaro:0, mago: 4, ladino: 7, feiticeiro:6, druida:4, bardo: 8, clerigo:4, paladino:4 }, 
-            resposta2: { guerreiro: 6, barbaro:8, mago: 4, ladino: 4, feiticeiro:3, druida:4, bardo: 0, clerigo:4, paladino:4 },            
+            resposta2: { guerreiro: 6, barbaro:5, mago: 4, ladino: 4, feiticeiro:3, druida:4, bardo: 0, clerigo:4, paladino:2 },            
         },
         pergunta3: { 
             resposta1: { guerreiro: 3, barbaro:0, mago: 4, ladino: 7, feiticeiro:6, druida:4, bardo: 8, clerigo:4, paladino:4 }, 
@@ -166,33 +171,35 @@
         
     };
 
-    mostrarPergunta();
+    mostrarPergunta(perguntaAtual)
 
-    function mostrarPergunta() {
+    function mostrarPergunta(perguntaAtual) {
+      
+        
         const perguntasDiv = document.getElementById('perguntas');
         perguntasDiv.innerHTML = '';
-        const novaPergunta = criarPergunta(perguntas[perguntaAtual]);
+        let numeroPergunta = perguntaAtual;
+        const novaPergunta = criarPergunta(perguntas[numeroPergunta]);
         perguntasDiv.appendChild(novaPergunta);
     
         // Pequeno delay para aplicar a animação
         setTimeout(() => {
-        novaPergunta.classList.add('visible');
+            novaPergunta.classList.add('visible');
         }, 100); // 100ms para garantir que o elemento foi inserido no DOM
     }
     
     function criarPergunta(pergunta) {
         const perguntaDiv = document.createElement('div');
-        perguntaDiv.classList.add('pergunta');
-    
+        perguntaDiv.classList.add('pergunta');    
         const perguntaTexto = document.createElement('p');
         perguntaTexto.textContent = pergunta.texto;
         perguntaDiv.appendChild(perguntaTexto);
     
         pergunta.opcoes.forEach((opcao, index) => {
-        const button = document.createElement('button');
-        button.textContent = opcao;
-        button.onclick = () => registrarResposta(perguntaAtual, 'resposta' + (index + 1));
-        perguntaDiv.appendChild(button);
+            const button = document.createElement('button');
+            button.textContent = opcao;
+            button.onclick = () => registrarResposta(perguntaAtual, 'resposta' + (index + 1));
+            perguntaDiv.appendChild(button);
         });
     
         return perguntaDiv;
@@ -201,10 +208,13 @@
     function registrarResposta(perguntaIndex, resposta) {
         for (let classe in pontuacaoClasses) {
             pontuacaoClasses[classe] += respostas['pergunta' + (perguntaIndex + 1)][resposta][classe];
-        }    
+        }
+        console.log(pontuacaoClasses);
+        atualizarProgresso();
         perguntaAtual++;
         if (perguntaAtual < perguntas.length) {
-            mostrarPergunta();
+            console.log(perguntaAtual);
+            mostrarPergunta(perguntaAtual);
         } else {
             recomendarClasse();
         }
@@ -212,20 +222,19 @@
 
     function atualizarProgresso() {
         const progresso = ((perguntaAtual + 1) / perguntas.length) * 100;
-        console.log(progresso);
         document.getElementById('progressBar').style.width = progresso + '%';
     } 
 
-    // Iniciar a primeira pergunta
-    
-
-
+   
     function recomendarClasse() {
-        const classeRecomendada = Object.keys(pontuacaoClasses).reduce((a, b) => pontuacaoClasses[a] > pontuacaoClasses[b] ? a : b);
+        const classeRecomendada = 
+        //Object.keys(pontuacaoClasses).reduce((a, b) => pontuacaoClasses[a] > pontuacaoClasses[b] ? a : b);
+        console.log(pontuacaoClasses);
+        
     
         document.getElementById('classeRecomendada').textContent = classeRecomendada;
         document.getElementById('resultado').style.display = 'block';
-        document.getElementById('perguntas').style.display = 'none';
+        questionarioDiv.style.display = 'none';
     
         // Animação de transição para o resultado
         setTimeout(() => {
