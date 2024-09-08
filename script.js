@@ -28,19 +28,15 @@
     function mostrarSeccao(seccao) {
     // Ocultar todas as seções
     document.querySelectorAll('.section1').forEach((section) => {
+        
         section.classList.remove('active');
-        section.style.display = 'none';
-       
         resultadoDiv.classList.remove('visible');
         resultadoDiv.style.display = 'none';
         resetarQuestionario();        
 
     });
     // Mostrar apenas a seção clicada
-    setTimeout(() => {
-        seccao.classList.add('active');
-        seccao.style.display = 'block'; // Garantir que a seção está visível
-    }, 100); // Pequeno delay para suavizar a transição
+    seccao.classList.add('active');
     
     console.log(seccao);
     }
