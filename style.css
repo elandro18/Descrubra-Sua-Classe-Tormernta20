@@ -8,6 +8,7 @@ body {
     padding: 0;
     display: flex;
     height: 100vh;
+    min-height: 100vh;
     flex-direction: column;
     /*justify-content: space-evenly;*/
     /*align-items: center;*/
@@ -63,6 +64,7 @@ h1 h2 {
 /*Estilos gerais*/
 .container {
     display: flex; /* Usa Flexbox para layout */
+    flex: 1;
     flex-direction: column; /* Alinha os itens na vertical */
     align-items: center; /* Centraliza os itens horizontalmente */
     border-radius: 8px; 
