@@ -1,109 +1,132 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>História de Tormenta 20</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header>
-            <div class="menu-toggle" id="menu-toggle">
-                <div class="hamburger"></div>
-            </div>
-            <nav>               
-                <a href="https://jamboeditora.com.br/categoria/rpg/tormenta20-rpg/" target="_blank"><img src="./assets/imgs/logoTormenta.png" width="220px" ></a>                
-                <a href="" id="btnInicio" >Início</a>
-                <a href="" id="btnHistoria">História do Jogo</a>
-                <a href="" id="btnCriePersonagem">Descubra sua Classe</a>
-                <a href="" id="btnMaisInformacoes">Mais Informações</a>
-            </nav>
-            <h1></h1>
-        </header>
-        <main class="container">
-            <section class="section1 active" id="inicio">
-                <!-- Seção de Início -->
-                <div class="texto-inicio">
-                    <h1>Bem-vindo ao Mundo de Tormenta 20</h1>                 
-                    <p>Este site foi criado para auxiliar novos e veteranos jogadores no incrível universo de <strong>Tormenta 20</strong>. Aqui, você pode explorar a história rica e fascinante do jogo, aprender sobre o mundo de Arton e seus desafios, e também criar e personalizar seu próprio personagem, escolhendo raças, classes e habilidades para embarcar em aventuras épicas. Navegue pelo menu e aproveite ao máximo sua experiência com <strong>Tormenta 20!</strong></p>
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="icon" type="image/x-icon" href="assets/imgs/icon.png"> 
+            <title>História de Tormenta 20</title>
+            <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+            <header>
+                <div class="menu-toggle" id="menu-toggle">
+                    <div class="hamburger"></div>
                 </div>
-            </section>
-            <section class="section1" id="historia">
-                <!-- Seção de História do Jogo -->
-                 <!-- Adicione mais informações sobre a história aqui -->
-                <div class="texto-inicio">
-                    <h2>História do Jogo</h2>
-                    <p><strong>Tormenta 20</strong> é a edição comemorativa de 20 anos do sistema de RPG mais famoso do Brasil, nascido em 1999 como um cenário de fantasia para o jogo <em>3D&T</em>. Criado por Marcelo Cassaro, Rogério Saladino e J. M. Trevisan, Tormenta logo se consolidou como um dos maiores sucessos do RPG nacional.</p>
-                    
-                    <p>O mundo de <strong>Arton</strong>, onde se passa o jogo, é repleto de heróis, vilões, deuses e criaturas fantásticas. Ele está constantemente ameaçado pela <strong>Tormenta</strong>, um fenômeno destrutivo e corruptor que transforma terras e seres vivos em abominações. Os jogadores assumem o papel de heróis que lutam contra essas forças sombrias, ao mesmo tempo em que navegam pelos reinos, deuses e conflitos de Arton.</p>
-                    
-                    <p>Ao longo dos anos, Tormenta evoluiu e passou por várias edições, expandindo seu universo com livros, quadrinhos e aventuras épicas. Em 2019, uma campanha de financiamento coletivo para Tormenta 20 foi lançada, batendo recordes e tornando-se um dos maiores financiamentos para RPG do Brasil.</p>
-                  
-                    <p>O sistema de regras de Tormenta 20 busca ser acessível tanto para jogadores iniciantes quanto para veteranos, trazendo novas opções de raças, classes, talentos e habilidades. Ele equilibra o clássico combate e exploração com uma narrativa rica e envolvente, onde as escolhas dos jogadores moldam o destino de Arton.</p>                  
-                    <p>Seja um aventureiro, um mago poderoso ou até mesmo um semi-deus, a jornada em Tormenta 20 está sempre cheia de desafios épicos e recompensas memoráveis.</p>                    
-                    
-                </div> 
-            </section>
-            <section class="section1" id="criePersonagem">   
-                <!-- Seção de Criação de Personagem -->
-                <div class="texto-inicio">
-                    <h2>Descubra sua Classe no Tormenta20</h2>
-                    <p>Desvende o seu destino heroico! Embarque nesta jornada de autodescoberta e, ao responder a 10 perguntas sobre sua essência e personalidade, encontre a classe que melhor reflete o seu verdadeiro poder no vasto universo de Tormenta 20. Guerreiro, mago, ladino ou druida... qual caminho você irá trilhar? Apenas os bravos ousam descobrir!</p>
-                </div>
-                <div class="questionario-botoes">
-                   <button id="startBtn" style="margin-bottom: 2%;">Iniciar o Questionário?</button>
-                    <button id="resetBtn" style="display: none; margin-bottom: 2%;">Resetar Questionário</button> 
-                </div>
-                
-
-                <div class="questionario" id="questionario">
-                    <!-- Adicione a lógica de criação de personagem aqui -->                    
-                    <div id="progressBarContainer">
-                    <div id="progressBar"></div>
-                    <div id="perguntas">
-                        <!-- As perguntas serão inseridas dinamicamente aqui -->
+                <nav>               
+                    <a href="https://jamboeditora.com.br/categoria/rpg/tormenta20-rpg/" target="_blank"><img src="./assets/imgs/logoTormenta.png" width="220px" ></a>                
+                    <a href="" id="btnInicio" >Início</a>
+                    <a href="" id="btnHistoria">História do Jogo</a>
+                    <a href="" id="btnCriePersonagem">Descubra sua Classe</a>
+                    <a href="" id="btnMaisInformacoes">Mais Informações</a>
+                </nav>
+                <h1></h1>
+            </header>
+            <main class="container">
+                <section class="section1 active" id="inicio">
+                    <!-- Seção de Início -->
+                    <div class="texto-inicio">
+                        <h1>Bem-vindo ao Mundo de Tormenta 20</h1>                 
+                        <p>Este site foi criado para auxiliar novos e veteranos jogadores no incrível universo de <strong>Tormenta 20</strong>. Aqui, você pode explorar a história rica e fascinante do jogo, aprender sobre o mundo de Arton e seus desafios, e também criar e personalizar seu próprio personagem, escolhendo raças, classes e habilidades para embarcar em aventuras épicas. Navegue pelo menu e aproveite ao máximo sua experiência com <strong>Tormenta 20!</strong></p>
                     </div>
-                </div>
-              
-               
-            </section> 
-            <section  class="section1" id="resultado">
-                <div class="texto-inicio">
-                    <p>Destemido aventureiro, após mergulharmos nas profundezas de sua essência, descobrimos as classes que mais ecoam com sua alma. Estes são os heróis que aguardam seu comando, forjados pelo destino para trilhar ao seu lado nas jornadas de Tormenta 20!</p>
-                    <span id="classeRecomendada"></span>
-                </div>
-            </section>
-            <section class="section1" id="maisInformacoes">            
-                <div class="texto-inicio" >
-                    <ul>
-                        <li>
-                            Site da Jambô Editora: https://jamboeditora.com.br/
-                        </li>
-                        <li>
-                            Catarse: https://www.catarse.me/tormenta20
-                        </li>
-                        <li>
-                            Comunidades online: Existem diversos grupos e fóruns dedicados a Tormenta 20 nas redes sociais e em plataformas como o Discord.
-                        </li>
-                    </ul>
-                </div>                          
-            </section>
-        </main>
-        <footer>
-            <p>2024 - Site feito por um fã de RPG </p>
-            <p>Entre em contato pelo email: elandro.caniela@gmail.com</p>
-            <p><a href="https://www.linkedin.com/in/elandro-caniela-31a1a566/">Linkedin</a></p>
-        </footer>
-        <script src="script.js"></script>
-        <script>
-            // Toggle do menu responsivo
-            const menuToggle = document.getElementById('menu-toggle');
-            const menu = document.querySelector('.menu');
+                </section>
+                <section class="section1" id="historia">
+                    <!-- Seção de História do Jogo -->
+                    <!-- Adicione mais informações sobre a história aqui -->
+                    <div class="texto-inicio">
+                        <h2>História do Jogo</h2>
+                        <p><strong>Tormenta 20</strong> é a edição comemorativa de 20 anos do sistema de RPG mais famoso do Brasil, nascido em 1999 como um cenário de fantasia para o jogo <em>3D&T</em>. Criado por Marcelo Cassaro, Rogério Saladino e J. M. Trevisan, Tormenta logo se consolidou como um dos maiores sucessos do RPG nacional.</p>
+                        
+                        <p>O mundo de <strong>Arton</strong>, onde se passa o jogo, é repleto de heróis, vilões, deuses e criaturas fantásticas. Ele está constantemente ameaçado pela <strong>Tormenta</strong>, um fenômeno destrutivo e corruptor que transforma terras e seres vivos em abominações. Os jogadores assumem o papel de heróis que lutam contra essas forças sombrias, ao mesmo tempo em que navegam pelos reinos, deuses e conflitos de Arton.</p>
+                        
+                        <p>Ao longo dos anos, Tormenta evoluiu e passou por várias edições, expandindo seu universo com livros, quadrinhos e aventuras épicas. Em 2019, uma campanha de financiamento coletivo para Tormenta 20 foi lançada, batendo recordes e tornando-se um dos maiores financiamentos para RPG do Brasil.</p>
+                    
+                        <p>O sistema de regras de Tormenta 20 busca ser acessível tanto para jogadores iniciantes quanto para veteranos, trazendo novas opções de raças, classes, talentos e habilidades. Ele equilibra o clássico combate e exploração com uma narrativa rica e envolvente, onde as escolhas dos jogadores moldam o destino de Arton.</p>                  
+                        <p>Seja um aventureiro, um mago poderoso ou até mesmo um semi-deus, a jornada em Tormenta 20 está sempre cheia de desafios épicos e recompensas memoráveis.</p>                    
+                        
+                    </div> 
+                </section>
+                <section class="section1" id="criePersonagem">   
+                    <!-- Seção de Criação de Personagem -->
+                    <div class="texto-inicio">
+                        <h2>Descubra sua Classe no Tormenta20</h2>
+                        <p>Desvende o seu destino heroico! Embarque nesta jornada de autodescoberta e, ao responder a 10 perguntas sobre sua essência e personalidade, encontre a classe que melhor reflete o seu verdadeiro poder no vasto universo de Tormenta 20. Guerreiro, mago, ladino ou druida... qual caminho você irá trilhar? Apenas os bravos ousam descobrir!</p>
+                    </div>
+                    <div class="questionario-botoes">
+                    <button id="startBtn" style="margin-bottom: 2%;">Iniciar o Questionário?</button>
+                        <button id="resetBtn" style="display: none; margin-bottom: 2%;">Resetar Questionário</button> 
+                    </div>            
+                    <div class="questionario" id="questionario">
+                        <!-- Adicione a lógica de criação de personagem aqui -->                    
+                        <div id="progressBarContainer">
+                        <div id="progressBar"></div>
+                        <div id="perguntas">
+                            <!-- As perguntas serão inseridas dinamicamente aqui -->
+                        </div>
+                    </div>                          
+                </section> 
+                <section  class="section1" id="resultado">
+                    <div class="texto-inicio">
+                        <p>Destemido aventureiro, após mergulharmos nas profundezas de sua essência, descobrimos as classes que mais ecoam com sua alma. Estes são os heróis que aguardam seu comando, forjados pelo destino para trilhar ao seu lado nas jornadas de Tormenta 20!</p>                   
+                
+                        <!-- Primeiro resultado (imagem à esquerda, texto à direita) -->
+                        <div class="classe-recomendada flex-layout left-img" id="">                            
+                            <div class="classe-text">
+                                <img src="" alt="Classe 1" class="classe-img" id="imgClasse1">
+                                <button><a href="" target="_blank" id="linkClasse1">Maiores informações sobre a classe</a></button>
+                                <h3 id="classeRecomendada1"></h3>
+                                <p id="descricaoClasse1">
+                                    
+                                </p>
+                            </div>
+                        </div>                     
+                        <!-- Segundo resultado (imagem à direita, texto à esquerda) -->
+                        <div class="classe-recomendada flex-layout left-img">
+                            <div class="classe-text">
+                                <img src="" alt="Classe 2" class="classe-img" id="imgClasse2">
+                                <button><a href="" target="_blank" id="linkClasse2">Maiores informações sobre a classe</a></button>
+                                <h3 id="classeRecomendada2"></h3>
+                                <p id="descricaoClasse2">
+                                   
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>  
             
-            menuToggle.addEventListener('click', () => {
-              menu.classList.toggle('active');
-            });
-        </script>
-    </body>
-</html>
+                </section>
+                <section class="section1" id="maisInformacoes">            
+                    <div class="texto-inicio" >
+                        <h2>Maiores informações sobre Tormenta20</h2>
+                        <ul>
+                            <li>
+                                <p><a href="https://jamboeditora.com.br/" target="_blank" class="linkers-informacoes">Site da Jambô Editora</a></p>                     
+                            </li>
+                            <li>
+                                <p><a href="https://www.catarse.me/tormenta20" target="_blank" class="linkers-informacoes">Catarse</a></p>
+                            </li>
+                            <li>
+                                <p>Comunidades online: Existem diversos grupos e fóruns dedicados a Tormenta 20 nas redes sociais e em plataformas como o Discord.</p>
+                            </li>
+                        </ul>
+                    </div>                          
+                </section>
+            </main>
+            <!--<footer>
+                <p>2024 - Site feito por um fã de RPG </p>
+                <p>Entre em contato pelo email: elandro.caniela@gmail.com</p>
+                <p><a href="https://www.linkedin.com/in/elandro-caniela-31a1a566/">Linkedin</a></p>
+            </footer>-->
+            <script src="dados.js"></script>
+            <script src="script.js"></script>
+            <script>
+                // Toggle do menu responsivo
+                const menuToggle = document.getElementById('menu-toggle');
+                const menu = document.querySelector('.menu');
+                
+                menuToggle.addEventListener('click', () => {
+                menu.classList.toggle('active');
+                });
+            </script>
+        </body>
+    </html>
 

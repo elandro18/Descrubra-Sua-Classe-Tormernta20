@@ -1,4 +1,5 @@
-    // Selecionar os botões e as seções
+
+   // Selecionar os botões e as seções
     const btnInicio = document.getElementById('btnInicio');
     const btnHistoria = document.getElementById('btnHistoria');
     const btnCriePersonagem = document.getElementById('btnCriePersonagem');
@@ -8,6 +9,15 @@
     const resetBtn = document.getElementById('resetBtn');
     const questionarioDiv = document.getElementById('questionario');
     const resultadoDiv =  document.getElementById('resultado');
+
+    const classeRecomendada1 = document.getElementById('classeRecomendada1');
+    const classeRecomendada2 = document.getElementById('classeRecomendada2');
+    const imgClasse1 = document.getElementById('imgClasse1');
+    const imgClasse2 = document.getElementById('imgClasse2');
+    const descricaoClasse1 = document.getElementById('descricaoClasse1');
+    const descricaoClasse2 = document.getElementById('descricaoClasse2');
+    const linkClasse1 = document.getElementById('linkClasse1');
+    const linkClasse2 = document.getElementById('linkClasse2');
 
     const inicioSection = document.getElementById('inicio');
     const historiaSection = document.getElementById('historia');
@@ -20,16 +30,19 @@
     document.querySelectorAll('.section1').forEach((section) => {
 
         section.classList.remove('active');
+        resultadoDiv.classList.remove('visible');
+
     });
     // Mostrar apenas a seção clicada
     seccao.classList.add('active');
+    
     console.log(seccao);
     }
 
     // Event listeners para os botões
     btnInicio.addEventListener('click', () => {
         event.preventDefault();
-        console.log("acessou aqui");
+       
         mostrarSeccao(inicioSection);
     });
 
@@ -47,6 +60,7 @@
         event.preventDefault();
         mostrarSeccao(maisInformacoesSection);
     });
+
     startBtn.addEventListener('click', iniciarQuestionario);
     resetBtn.addEventListener('click', resetarQuestionario);
 
@@ -171,7 +185,7 @@
             }
         
     };
-
+    
     mostrarPergunta(perguntaAtual)
 
     function mostrarPergunta(perguntaAtual) {
@@ -233,18 +247,102 @@
          
     }    
     function recomendarClasse() {
+        resultadoDiv.style.display = 'block';
+        
         console.log(pontuacaoClasses);         
         const classesArray = Object.entries(pontuacaoClasses);
+
         classesArray.sort((a, b) => b[1] - a[1]);
         
-        const top3Classes = classesArray.slice(0, 3);       
+        const top3Classes = classesArray.slice(0, 2);            
         console.log(top3Classes);
+        let nomeclasse1 = top3Classes[0][0].toLocaleUpperCase()
+        let numero = 0;
+        classeRecomendada1.innerHTML = nomeclasse1;
+        montaDescricao(nomeclasse1, numero)
 
-        document.getElementById('classeRecomendada').textContent = top3Classes;
-        resultadoDiv.style.display = 'block';           
+        let nomeclasse2 = top3Classes[1][0].toLocaleUpperCase();
+        numero = 1      
+        classeRecomendada2.innerHTML = nomeclasse2;
+        montaDescricao(nomeclasse2, numero);  
+
+        //document.getElementById('classeRecomendada').textContent = top3Classes;          
+        
         // Animação de transição para o resultado
         setTimeout(() => {
             resultadoDiv.classList.add('visible');
             questionarioDiv.style.display = 'none';
         }, 100); // Pequeno delay para suavizar a transição
+    }
+
+    function montaDescricao(nomeClasse, numero){
+        if(numero == 0){            
+            if(nomeClasse.toLocaleLowerCase() == "guerreiro"){
+                descricaoClasse1.innerHTML = dados[0].descricao;
+                imgClasse1.src = dados[0].img;
+                linkClasse1.setAttribute('href',dados[0].siteInformacoes); 
+            }if(nomeClasse.toLocaleLowerCase() == "barbaro"){
+                descricaoClasse1.innerHTML = dados[1].descricao;
+                imgClasse1.src = dados[1].img;
+                linkClasse1.setAttribute('href',dados[1].siteInformacoes);
+            }if(nomeClasse.toLocaleLowerCase() == "mago"){
+                descricaoClasse1.innerHTML = dados[2].descricao;
+                imgClasse1.src = dados[2].img;
+                linkClasse1.setAttribute('href',dados[2].siteInformacoes);
+            }if(nomeClasse.toLocaleLowerCase() == "ladino"){
+                descricaoClasse1.innerHTML = dados[3].descricao;
+                imgClasse1.src = dados[3].img;
+                linkClasse1.setAttribute('href',dados[3].siteInformacoes);
+            }if(nomeClasse.toLocaleLowerCase() == "druida"){
+                descricaoClasse1.innerHTML = dados[4].descricao;
+                imgClasse1.src = dados[4].img;
+                linkClasse1.setAttribute('href',dados[4].siteInformacoes);
+            }if(nomeClasse.toLocaleLowerCase() == "bardo"){
+                descricaoClasse1.innerHTML = dados[5].descricao;
+                imgClasse1.src = dados[5].img;
+                linkClasse1.setAttribute('href',dados[5].siteInformacoes);
+            }if(nomeClasse.toLocaleLowerCase() == "clerigo"){
+                descricaoClasse1.innerHTML = dados[6].descricao;
+                imgClasse1.src = dados[6].img;
+                linkClasse1.setAttribute('href',dados[6].siteInformacoes);
+            }if(nomeClasse.toLocaleLowerCase() == "paladino"){
+                descricaoClasse1.innerHTML = dados[7].descricao;
+                imgClasse1.src = dados[7].img;
+                linkClasse1.setAttribute('href',dados[7].siteInformacoes);
+            }
+        }else{
+            if(nomeClasse.toLocaleLowerCase() == "guerreiro"){
+                descricaoClasse2.innerHTML = dados[0].descricao;
+                imgClasse2.src = dados[0].img;
+                linkClasse2.setAttribute('href',dados[0].siteInformacoes);
+            }if(nomeClasse.toLocaleLowerCase() == "barbaro"){
+                descricaoClasse2.innerHTML = dados[1].descricao;
+                imgClasse2.src = dados[1].img;
+                linkClasse2.setAttribute('href',dados[1].siteInformacoes);
+            }if(nomeClasse.toLocaleLowerCase() == "mago"){
+                descricaoClasse2.innerHTML = dados[2].descricao;
+                imgClasse2.src = dados[2].img;
+                linkClasse2.setAttribute('href',dados[2].siteInformacoes);
+            }if(nomeClasse.toLocaleLowerCase() == "ladino"){
+                descricaoClasse2.innerHTML = dados[3].descricao;
+                imgClasse2.src = dados[3].img;
+                linkClasse2.setAttribute('href',dados[3].siteInformacoes);
+            }if(nomeClasse.toLocaleLowerCase() == "druida"){
+                descricaoClasse2.innerHTML = dados[4].descricao;
+                imgClasse2.src = dados[4].img;
+                linkClasse2.setAttribute('href',dados[4].siteInformacoes);
+            }if(nomeClasse.toLocaleLowerCase() == "bardo"){
+                descricaoClasse2.innerHTML = dados[5].descricao;
+                imgClasse2.src = dados[5].img;
+                linkClasse2.setAttribute('href',dados[5].siteInformacoes);
+            }if(nomeClasse.toLocaleLowerCase() == "clerigo"){
+                descricaoClasse2.innerHTML = dados[6].descricao;
+                imgClasse2.src = dados[6].img;
+                linkClasse2.setAttribute('href',dados[6].siteInformacoes);
+            }if(nomeClasse.toLocaleLowerCase() == "paladino"){
+                descricaoClasse2.innerHTML = dados[7].descricao;
+                imgClasse2.src = dados[7].img;
+                linkClasse2.setAttribute('href',dados[7].siteInformacoes);
+            }
+        }
     }
