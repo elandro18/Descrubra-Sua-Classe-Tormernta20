@@ -27,7 +27,7 @@ Esta aplicação foi projetada para ajudar os jogadores de **Tormenta 20** a enc
 1. **Clone o repositório**: Clone o repositório localmente.
    ```bash
    git clone https://github.com/elandro18/Descrubra-Sua-Classe-Tormernta20.git
-   2. Abra o arquivo index.html: Abra o arquivo index.html em seu navegador de internet favorito.
+2. Abra o arquivo index.html: Abra o arquivo index.html em seu navegador de internet favorito.
 3. Comece a explorar: Responda ao questionário e descubra suas classes ideais!
 
 ## Quer contribuir?
