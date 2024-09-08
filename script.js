@@ -76,7 +76,7 @@
         clerigo: { fisico: 4,  estrategia: 4, magia: 7, vida: 7, agilidade: 2, resistencia: 6, carisma: 4 },
         paladino: { fisico: 8,  estrategia: 4,  magia: 3, vida: 8, agilidade: 5, resistencia: 8, carisma: 4 }
     };      
-    var perguntaAtual = 0;
+    var perguntaAtual = 0; 
     // Função para iniciar o questionário
     function iniciarQuestionario() {
         questionarioDiv.style.display = 'block';  // Exibe as perguntas

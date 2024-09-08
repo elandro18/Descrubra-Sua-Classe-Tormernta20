@@ -161,7 +161,7 @@ button:hover {
 }
     
 .classe-img {
-    /*width: 172px;*/
+    /*width: 172px;*/ 
     height: 237px;
     object-fit: cover;
     border-radius: 5%;
