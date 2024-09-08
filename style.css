@@ -71,13 +71,21 @@ h1 h2 {
 }
 
 .section1 {
-    display: none;
-    margin-top: 0%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    position: relative;
+    display: none; 
 }
 
 .section1.active {
-    margin-top: 0%;
-    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    display: block; /* Mostra a seção ativa */
+}
+.section1 {
+    min-height: calc(100vh - 60px); /* Altura da tela menos o header */
+    padding: 20px;
 }
 
 .texto-inicio{
