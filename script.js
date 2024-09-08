@@ -31,6 +31,8 @@
 
         section.classList.remove('active');
         resultadoDiv.classList.remove('visible');
+        resultadoDiv.style.display = 'none';
+        resetarQuestionario();
 
     });
     // Mostrar apenas a seção clicada
